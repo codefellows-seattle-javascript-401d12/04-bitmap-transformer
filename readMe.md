@@ -12,9 +12,9 @@ It can do transforms:
   - (red|green|blue)scale the colors
 
 It can can also:
-  - handle various sized bitmap
-  - handle LE and BE computers with a single if statement
-  - utilizes a command line interface (CLI)
+  - Handle various sized bitmap
+  - Handle LE and BE computers with a single if statement
+  - Utilizes a command line interface (CLI)
   - CLI can select the transforms
  
 
