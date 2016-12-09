@@ -2,6 +2,7 @@
 
 const bmp = require('./model/bitmap-constructor.js');
 
-const colorTable = bmp(function(err, bitmap) {
+bmp(function(err, bitmap) {
   if (err) throw err;
+  console.dir(bitmap);
 });
