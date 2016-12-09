@@ -25,5 +25,4 @@ It can can also:
    - chai
    - gulp
    - gulp-eslint
-   - gulp-header
    - gulp-mocha	
