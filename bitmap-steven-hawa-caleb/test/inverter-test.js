@@ -1,7 +1,7 @@
 'use strict';
 
 const fs = require('fs');
-const bmp = require(`${__dirname}/../model/bitmap-constructor.js`);
+const createBmp = require(`${__dirname}/../model/bitmap-constructor.js`);
 const inverter = require(`${__dirname}/../lib/invert-colors.js`);
 const expect = require('chai').expect;
 
@@ -18,7 +18,7 @@ describe('Color inverter', function() {
     });
 
     it('Should have all values equal to 255 minus the original buffer values', function(done) {
-      bmp.createBmp(function(err, data) {
+      createBmp(function(err, data) {
         if (err) throw err;
         inverter.invertColorTable(function(err, buffer) {
           if (err) throw err;
