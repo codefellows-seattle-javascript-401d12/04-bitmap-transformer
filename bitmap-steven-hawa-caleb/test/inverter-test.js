@@ -3,6 +3,7 @@
 const fs = require('fs');
 const bmp = require(`${__dirname}/../model/bitmap-constructor.js`);
 const inverter = require(`${__dirname}/../lib/invert-colors.js`);
+const expect = require('chai').expect;
 
 describe('Color inverter', function() {
   describe('#invertColorTable', function() {
