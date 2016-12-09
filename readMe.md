@@ -12,9 +12,11 @@ It can do transforms:
   - (red|green|blue)scale the colors
 
 It can can also:
-  - Handle various sized bitmap
-  - Handle LE and BE computers with a single if statement
-  - Utilizes a command line interface (CLI)
+  - handle various sized bitmap
+  - handle palette and non-palette bitmaps
+  - handle multiple types of bitmaps (not just BM)
+  - handle LE and BE computers with a single if statement
+  - utilizes a command line interface (CLI)
   - CLI can select the transforms
  
 
@@ -25,4 +27,3 @@ It can can also:
    - gulp-eslint
    - gulp-header
    - gulp-mocha	
-   - mocha
