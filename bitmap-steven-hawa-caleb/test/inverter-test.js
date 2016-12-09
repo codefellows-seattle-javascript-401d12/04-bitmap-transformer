@@ -1,5 +1,6 @@
 'use strict';
 
+const fs = require('fs');
 const bmp = require(`${__dirname}/../model/bitmap-constructor.js`);
 const inverter = require(`${__dirname}/../lib/invert-colors.js`);
 
@@ -27,6 +28,16 @@ describe('Color inverter', function() {
         });
       });
       done();
+    });
+  });
+
+  describe('#writeToFile', function() {
+    it('Should create a file called inverted-palette.bmp', function(done) {
+      fs.readFile(`${__dirname}/../../img/inverted-palette.bmp`, function(err, data) {
+        expect(err).to.equal(null);
+        expect(data).to.be.an('object');
+        done();
+      });
     });
   });
 });
