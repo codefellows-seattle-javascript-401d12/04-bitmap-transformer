@@ -19,17 +19,16 @@ describe('Color inverter', function() {
     });
 
     it('Should have all values equal to 255 minus the original buffer values', function(done) {
-      createBmp(function(err, data) {
-        if (err) throw err;
+      createBmp(function(err, table) {
         inverter.invertColorTable(function(err, buffer) {
-          if (err) throw err;
-          const checkEquality = buffer.every(function(invertedValue, i) {
-            return invertedValue === (255 - data[i]);
-          });
+          var checkEquality = true;
+          for (var i = 54; i < 1078; i++) {
+            if (buffer[i] !== (255 - table.colorTable[i - 54])) checkEquality = false;
+          }
           expect(checkEquality).to.equal(true);
+          done();
         });
       });
-      done();
     });
   });
 
