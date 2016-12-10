@@ -4,12 +4,14 @@ const TB = require('./lib/TransformableBitmap.js');
 
 var ourTB = new TB;
 
-ourTB.read('data/thebitmapfile.bmp');
+console.log('height:', ourTB.height);
 
-ourTB.greyscale();
+//ourTB.read('data/thebitmapfile.bmp');
 
-ourTB.invert();
+//ourTB.greyscale();
 
-ourTB.increaseBrightness(50);
+//ourTB.invert();
+
+//ourTB.increaseBrightness(50);
 
 ourTB.write('the output transformed bitmap file');
