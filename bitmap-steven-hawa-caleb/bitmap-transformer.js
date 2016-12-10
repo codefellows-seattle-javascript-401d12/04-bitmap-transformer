@@ -1,8 +1,12 @@
 'use strict';
 
-const bmp = require('./model/bitmap-constructor.js');
+const cliInterpreter = require('./lib/cli-interpreter.js');
+const invert = require('./lib/invert-colors.js');
 
-bmp(function(err, bitmap) {
-  if (err) throw err;
-  console.dir(bitmap);
-});
+const transformArray = cliInterpreter(process.argv);
+
+if (transformArray.some(function(element) { return element.toLowerCase() === 'invert'; })) {
+  invert.createInvertedBitmap(function() {
+    console.log('Inverted colors of palette-bitmap.bmp.');
+  });
+}
