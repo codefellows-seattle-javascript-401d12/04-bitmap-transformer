@@ -9,12 +9,13 @@ describe('Color inverter', function() {
   describe('#invertColorTable', function() {
     it('Should not have any values above 255 or below 0', function(done) {
       inverter.invertColorTable(function(err, buffer) {
-        const checkOutliers = buffer.some(function(value) {
-          return value > 255 && value < 0;
-        });
+        var checkOutliers = false;
+        for (var i = 54; i < 1078; i++) {
+          if (buffer[i] > 255 || buffer[i] < 0) checkOutliers = true;
+        }
         expect(checkOutliers).to.equal(false);
+        done();
       });
-      done();
     });
 
     it('Should have all values equal to 255 minus the original buffer values', function(done) {
