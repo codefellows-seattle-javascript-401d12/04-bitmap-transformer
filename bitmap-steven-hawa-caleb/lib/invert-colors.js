@@ -1,15 +1,18 @@
 'use strict';
 
+const fs = require('fs');
 const bmp = require(`${__dirname}/../model/bitmap-constructor.js`);
 
 module.exports = exports = {};
 
 exports.invertColorTable = function(callback) {
-  var invertedTable = [];
-  bmp.createBmp(function(err, data) {
-    data.forEach(function(value) {
-      invertedTable.push(255 - value);
+  fs.readFile(`${__dirname}/../../img/palette-bitmap.bmp`, function(err, data) {
+    var invertedBuffer = Buffer.from(data);
+    bmp(function(err, data) {
+      for (var i = 0; i < data.length; i++) {
+        invertedBuffer[54 + i] = 255 - data.colorTable[i];
+      }
+      callback(null, invertedBuffer);
     });
-    callback(null, invertedTable);
   });
 };
