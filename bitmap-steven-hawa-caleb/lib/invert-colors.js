@@ -17,10 +17,11 @@ exports.invertColorTable = function(callback) {
   });
 };
 
-exports.createInvertedBitmap = function() {
+exports.createInvertedBitmap = function(callback) {
   exports.invertColorTable(function(err, invertedBuffer) {
     fs.writeFile(`${__dirname}/../../img/inverted-bitmap.bmp`, invertedBuffer, function(err) {
       if (err) throw err;
+      if (callback) callback();
     });
   });
 };
