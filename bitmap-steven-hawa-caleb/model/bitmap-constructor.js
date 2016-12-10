@@ -17,7 +17,7 @@ const fs = require('fs');
 // of 256, meaning this bitmap file has 256 colors.
 // Since each color is 4 bytes, we would expect a color table to be (256 x 4 = 1024) bytes in size. This matches our expected range of 54 bytes to 1078
 // bytes (1078 - 54 = 1024), so we can be sure we have correctly selected the color table from our buffer.
-const createBmp = module.exports = function(callback) {
+const createBmp = module.exports = function(callback) { //eslint-disable-line
   const bmp = {};
   fs.readFile(`${__dirname}/../../img/palette-bitmap.bmp`, function(err, data) {
     if (err) throw err;
