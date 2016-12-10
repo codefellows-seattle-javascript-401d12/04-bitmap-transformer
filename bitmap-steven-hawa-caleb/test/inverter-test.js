@@ -32,12 +32,14 @@ describe('Color inverter', function() {
     });
   });
 
-  describe('#writeToFile', function() {
+  describe('#createInvertedBitmap', function() {
     it('Should create a file called inverted-palette.bmp', function(done) {
-      fs.readFile(`${__dirname}/../../img/inverted-palette.bmp`, function(err, data) {
-        expect(err).to.equal(null);
-        expect(data).to.be.an('object');
-        done();
+      inverter.createInvertedBitmap(function() {
+        fs.readFile(`${__dirname}/../../img/inverted-palette.bmp`, function(err, data) {
+          expect(err).to.equal(null);
+          expect(data).to.be.an('object');
+          done();
+        });
       });
     });
   });
