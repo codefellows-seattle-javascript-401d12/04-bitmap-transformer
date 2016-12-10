@@ -1,8 +1,7 @@
 'use strict';
 
-const bmp = require('./model/bitmap-constructor.js');
+const cliInterpreter = require('./lib/cli-interpreter.js');
 
-bmp(function(err, bitmap) {
-  if (err) throw err;
-  console.dir(bitmap);
-});
+const transformArray = cliInterpreter(process.argv);
+
+console.dir(transformArray);
