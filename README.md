@@ -5,7 +5,7 @@ The bitmap transformer is a simple Node-based app that will allow you to change 
 
 ### Usage
 
-Clone down this repository, then navigate to the bitmap-steven-hawa-caleb directory in your terminal.
+Clone down this repository, then navigate to the bitmap-steven-hawa-caleb directory in your terminal and run ```npm i```.
 
 Transform the image by running ```node bitmap-transformer.js``` plus any of the three following arguments: ```invert```, ```grayscale```, ```bluescale```. Each argument passed in will create a copy of the original bitmap with the appropriate transform applied.
 
