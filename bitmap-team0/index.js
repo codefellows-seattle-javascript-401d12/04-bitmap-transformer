@@ -2,7 +2,7 @@
 
 const TB = require('./lib/TransformableBitmap.js');
 
-var ourTB = new TB;
+var ourTB = new TB('../img/palette-bitmap.bmp');
 
 console.log('height:', ourTB.height);
 
@@ -14,4 +14,4 @@ console.log('height:', ourTB.height);
 
 //ourTB.increaseBrightness(50);
 
-ourTB.write('the output transformed bitmap file');
+ourTB.write('../img/txbitmap.bmp');

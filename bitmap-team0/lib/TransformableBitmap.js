@@ -4,12 +4,13 @@
 //and "var ourTB = new TB;"
 module.exports = TransformableBitmap;
 
-function TransformableBitmap() {
+function TransformableBitmap(path) {
 	//This is the constructor
 	this.height = 0;
 	this.width = 0;
 	this.originalBitmap = new Buffer(''); //???
 	this.imageData = [[]]; //???
+	var originalBuffer = fs.readfileSync(path);
 };
 
 
