@@ -7,6 +7,7 @@ const bluescale = require('./lib/bluescale-colors.js');
 
 const transformArray = cliInterpreter(process.argv);
 
+// Series of if statements checking for the words "invert," "grayscale," and "bluescale". If they were passed in, use the appropriate module method.
 if (transformArray.some(function(element) { return element.toLowerCase() === 'invert'; })) {
   invert.createInvertedBitmap(function() {
     console.log('Inverted colors of palette-bitmap.bmp.');
