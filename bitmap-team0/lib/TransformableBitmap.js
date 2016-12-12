@@ -9,7 +9,7 @@ function TransformableBitmap() {
 	this.height = 0;
 	this.width = 0;
 	this.originalBitmap = new Buffer; //???
-	this.imageData = [][]; //???
+	// this.imageData = [][]; //???
 }
 
 

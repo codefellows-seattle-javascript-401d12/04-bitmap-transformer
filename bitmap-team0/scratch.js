@@ -4,6 +4,7 @@
 const fs = require('fs');
 const bitmap = fs.readFileSync(`${__dirname}/../img/palette-bitmap.bmp`);
 const bmp = {};
+module.exports = bmp;
 
 bmp.type = bitmap.toString('utf-8', 0, 2);//BM
 bmp.size = bitmap.readUInt32LE(2);//11078
@@ -13,8 +14,8 @@ bmp.pixel_array_start = bitmap.readUInt32LE(10);//1078
 bmp.header_size = bitmap.readUInt32LE(14);//40 BITMAPINFOHEADER
 bmp.width = bitmap.readUInt32LE(18);//100
 bmp.height = bitmap.readUInt32LE(22);//100
-bmp.color_planes = bitmap.readUInt32LE(26);//524289
-bmp.bpp = bitmap.readUInt32LE(28);//bits per pixel
+bmp.color_planes = bitmap.readUInt16LE(26);//524289
+bmp.bpp = bitmap.readUInt16LE(28);//bits per pixel //8
 bmp.compression_method = bitmap.readUInt32LE(30);// 0 none
 bmp.image_size =  bitmap.readUInt32LE(34);//10000
 bmp.horizontal_resolution = bitmap.readUInt32LE(38);//2834
@@ -31,4 +32,4 @@ for (var i in bmp.image_data) {
 	bmp.dec_data[i][1] = parseInt(bmp.image_data[i].substring(2,4),16);
 	bmp.dec_data[i][2] = parseInt(bmp.image_data[i].substring(4,6),16);
 }
-console.dir(bmp);
+// console.dir(bmp);
