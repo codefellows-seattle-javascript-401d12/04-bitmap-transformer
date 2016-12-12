@@ -10,7 +10,7 @@ const fs = require('fs');
 // We can double check our DIB Header size using the buffer method readInt32LE(14), which will read the signed integer 14 bytes in (where the DIB header starts).
 // So, the bitmap file header and the DIB header are a combined total of 54 bytes, so our color table should start at the 54th position of our buffer.
 // We know where the color table ends because the pixel array immediately follows the color table, and the pixel array can be found 10 bytes in to
-// the bitmap file header using the buffer method bitmap.readInt32LE(10), which will read the signed integer 10 bytes in.
+// the bitmap file header using the buffer method readInt32LE(10), which will read the signed integer 10 bytes in.
 // We get back the value 1078, so we know the pixel array begins at the 1078th location.
 // We can double check that our colorTable is the correct size by checking how many colors this bitmap file is expected to have.
 // The DIB BITMAPINFOHEADER contains this information at an offset of 46 bytes, so if we use the buffer method readInt32LE(46), we get back a value
