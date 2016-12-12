@@ -10,7 +10,7 @@ exports.blueScaleColorTable = function(callback) {
     var blueScaleBuffer = Buffer.from(data);
     bmp(function(err, data) {
       for (var index = 0; index < data.colorTable.length; index += 4) {
-        var blueAvg = parseInt(blueScaleBuffer[52 + index] + blueScaleBuffer[53 + index] + blueScaleBuffer[54 + index] / 3);
+        var blueAvg = parseInt(blueScaleBuffer[54 + index] + blueScaleBuffer[55 + index] + blueScaleBuffer[56 + index] / 3);
         if (blueAvg > 255) blueAvg = 255;
         blueScaleBuffer[54 + index] = blueAvg;
       }
