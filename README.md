@@ -39,8 +39,9 @@ In this project, we are converting the image below using different transforms:
 To run this project locally, type the following into your terminal:
 
 1. `git clone https://github.com/brittdawn/04-bitmap-transformer.git`
-2. `npm i`
-3. `node index.js`
+2. `cd 04-bitmap-transformer/`
+3. `npm i`
+4. `node index.js`
 
 The terminal will then prompt you: "Please enter one of the following: green, white, invert, greyscale, luminosity, black or all."
 
