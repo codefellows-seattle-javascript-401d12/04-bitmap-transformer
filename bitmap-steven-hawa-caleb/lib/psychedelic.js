@@ -12,7 +12,6 @@ exports.psychedelicTransform = function(callback) {
       for (var index = 0; index < data.colorTable.length; index += 1) {
         if (psychedelicBuffer[54 + index] > 200) {
           psychedelicBuffer[54 + index] = 0;
-          console.log(psychedelicBuffer[54 + index]);
         }
       }
       callback(null, psychedelicBuffer);
