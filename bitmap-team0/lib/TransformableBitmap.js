@@ -8,6 +8,7 @@ module.exports = TransformableBitmap;
 
 function TransformableBitmap(path) {
 	this.bitmap = fs.readFileSync(path);
+	var colorTableOffset = 14 + this.bitmap.readUInt32LE(14);
 };
 
 TransformableBitmap.prototype.invert = function() {
@@ -18,7 +19,6 @@ TransformableBitmap.prototype.invert = function() {
 	}
 	return this;
 };	
-
 
 TransformableBitmap.prototype.write = function(path) {
 	fs.writeFileSync(path, this.bitmap);
