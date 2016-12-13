@@ -3,6 +3,7 @@
 const fs = require('fs');
 const bitmap = fs.readFileSync('./img/palette-bitmap.bmp');
 module.exports = exports = {};
+
 exports.index = [];
 
 function rgba(i,blue, green, red, a, color, blueC, greenC, redC, aC){
@@ -36,7 +37,7 @@ exports.colorPicker = function(){
    };
    colorMapStartByte += 4;
   };
-  console.log(exports.index);
+  // console.log(exports.index);
   return exports.index;
 };
 exports.colorPicker();

@@ -1,7 +1,7 @@
 'use strict';
 
 const fs = require('fs');
-const bitmap = fs.readFile('./img/palette-bitmap.bmp');
+const bitmap = fs.readFileSync('./img/palette-bitmap.bmp');
 const arr = require('./colorTransform.js');
 
 module.exports =  function invertColor(){
@@ -13,5 +13,5 @@ module.exports =  function invertColor(){
     invertImage.writeUIntLE(255 - arr.index[i].aC, arr.index[i].a, 1);
  };
  // fs.writeFileSync('./img/invertImage.bmp', invertImage);
- return fs.writeFile('./img/invertImage.bmp', invertImage);
+ return fs.writeFileSync('./img/invertImage.bmp', invertImage);
 };
