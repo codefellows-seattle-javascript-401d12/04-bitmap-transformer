@@ -11,8 +11,8 @@ function TransformableBitmap(path) {
 };
 
 TransformableBitmap.prototype.invert = function() {
-	for (var i = 0; i < 255; i++) {
-		for (var j = 0; j < 3; j++) {
+	for (var i = 0; i <= 255; i++) {
+		for (var j = 0; j <= 2; j++) {
 			this.bitmap[colorTableOffset + i * 4 + j] = 255 - this.bitmap[colorTableOffset + i * 4 + j];
 		}
 	}
@@ -21,5 +21,5 @@ TransformableBitmap.prototype.invert = function() {
 
 
 TransformableBitmap.prototype.write = function(path) {
-	fs.writeFileSync('./out.bmp', this.bitmap);
+	fs.writeFileSync(path, this.bitmap);
 };
