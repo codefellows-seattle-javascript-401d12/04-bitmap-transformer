@@ -17,6 +17,7 @@ TransformableBitmap.prototype.invert = function() {
       this.bitmap[this.colorTableOffset + i * 4 + j] = 255 - this.bitmap[this.colorTableOffset + i * 4 + j];
     }
   }
+  this.write('../img/invert-palette-bitmap.bmp');
   return this;
 };
 
@@ -28,6 +29,7 @@ TransformableBitmap.prototype.grayscale = function() {
       this.bitmap[baseOffset + j] = avg;
     }
   }
+  this.write('../img/grayscale-palette-bitmap.bmp');
   return this;
 };
 
@@ -38,6 +40,7 @@ TransformableBitmap.prototype.colorScale = function(redFactor, greenFactor, blue
     this.bitmap[baseOffset + 1] = Math.min(Math.max(greenFactor * this.bitmap[baseOffset + 1], 0), 255);
     this.bitmap[baseOffset + 2] = Math.min(Math.max(redFactor * this.bitmap[baseOffset + 2], 0), 255);
   }
+  this.write('../img/colorScale-palette-bitmap.bmp');
   return this;
 };
 
