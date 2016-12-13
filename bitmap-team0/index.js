@@ -1,7 +1,7 @@
 'use strict';
+const chooseTransform = require('./lib/cli.js');
 
-const TB = require('./lib/TransformableBitmap.js');
 
-var ourTB = new TB('../img/palette-bitmap.bmp');
 
-ourTB.invert().grayscale().colorScale(1,1.3,1).write('out.bmp');
+chooseTransform();
+// ourTB.invert().grayscale().colorScale(1,1.3,1).write('out.bmp');
