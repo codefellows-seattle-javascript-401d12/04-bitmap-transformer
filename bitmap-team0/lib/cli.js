@@ -1,4 +1,4 @@
-'use strict',
+'use strict';
 
 const readline = require('readline');
 const TB = require('./TransformableBitmap.js');
@@ -16,6 +16,7 @@ module.exports = function chooseTransform(){
       console.log('invert: enter \'i\'');
       console.log('grayscale: enter \'g\'');
       console.log('colorScale: enter \'c\'');
+      console.log('redGreenBleu: enter \'rgb\'');
       console.log(' type \'exit\' and enter to quit');
       CLI();
     }
@@ -34,7 +35,7 @@ module.exports = function chooseTransform(){
       rl.close();
     }
   });
-   function CLI(){
+  function CLI(){
     rl.question('Choose method by pressing specified key! ', (answer) => {
       if(answer === ( 'i' || 'I')){
         ourTB.invert();
@@ -51,14 +52,35 @@ module.exports = function chooseTransform(){
         console.log('colorScale-palette-bitmap.bmp file is been generated!');
         CLI();
       }
+      if(answer === ( 'rgb' || 'RGB')){
+        rl.question('Choose BLUE (0) GREEN(1) RED(2)', (answer) => {
+          if(answer === (0)){
+            ourTB.redGreenBleu();
+            console.log('Blue-palette-bitmap.bmp file is generatd!!');
+            CLI();
+          }
+          if(answer === (1)){
+            ourTB.redGreenBleu();
+            console.log('Green-palette-bitmap.bmp file is generatd!!');
+            CLI();
+          }
+          if(answer === (2)){
+            ourTB.redGreenBleu();
+            console.log('Red-palette-bitmap.bmp file is generatd!!');
+            CLI();
+          }
+          if(!(answer === ( '0' ||'1' || '2' ))){
+            chooseTransform();
+          }
+        });
+      }
       if(!(answer === ( 'g' || 'G'|| 'i' || 'I' || 'c' || 'C' ||'exit' || 'EXIT' || 'Exit'))){
-        console.log('Please enter right key!!');
-         CLI();
+        CLI();
       }
       if(answer === ('exit' || 'EXIT' || 'Exit')){
         console.log('Function Exit!!');
         rl.close();
       }
     });
-}
+  }
 };
