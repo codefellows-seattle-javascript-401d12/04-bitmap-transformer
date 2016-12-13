@@ -4,6 +4,7 @@ const cliInterpreter = require('./lib/cli-interpreter.js');
 const invert = require('./lib/invert-colors.js');
 const grayscale = require('./lib/grayscale-colors.js');
 const bluescale = require('./lib/bluescale-colors.js');
+const psychedelic = require('./lib/psychedelic.js');
 
 const transformArray = cliInterpreter(process.argv);
 
@@ -23,5 +24,11 @@ if (transformArray.some(function(element) { return element.toLowerCase() === 'gr
 if (transformArray.some(function(element) { return element.toLowerCase() === 'bluescale'; })) {
   bluescale.createBlueScaleBMP(function() {
     console.log('Blue-scaled the colors of palette-bitmap.bmp.');
+  });
+}
+
+if (transformArray.some(function(element) { return element.toLowerCase() === 'psychedelic'; })) {
+  psychedelic.createPsychedelicBMP(function() {
+    console.log('Psyched the colors of palette-bitmap.bmp.');
   });
 }
