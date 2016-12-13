@@ -9,9 +9,9 @@ describe('bitmap transform module', function(){
       expect(transformBit).to.be.a('function');
     });
     it('should create an object', function(){
-      var test = new transformBit('../img/palette-bitmap.bmp');
+      var object = new transformBit('../img/palette-bitmap.bmp');
       console.log('test', test);
-      expect(test).to.be.an('object');
+      expect(object).to.be.an('object');
     });
   });
 });
