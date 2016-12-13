@@ -10,8 +10,9 @@ exports.psychedelicTransform = function(callback) {
     var psychedelicBuffer = Buffer.from(data);
     bmp(function(err, data) {
       for (var index = 0; index < data.colorTable.length; index += 1) {
-        if (psychedelicBuffer[index] > 200) {
-          psychedelicBuffer[index] = 0;
+        if (psychedelicBuffer[54 + index] > 200) {
+          psychedelicBuffer[54 + index] = 0;
+          console.log(psychedelicBuffer[54 + index]);
         }
       }
       callback(null, psychedelicBuffer);
