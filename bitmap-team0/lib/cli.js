@@ -52,24 +52,24 @@ module.exports = function chooseTransform(){
         console.log('colorScale-palette-bitmap.bmp file is been generated!');
         CLI();
       }
-      if(answer === ( 'rgb' || 'RGB')){
-        rl.question('Choose BLUE (0) GREEN(1) RED(2)', (answer) => {
-          if(answer === (0)){
-            ourTB.redGreenBleu();
+      if(answer === 'rgb'){
+        rl.question('Choose BLUE (b) GREEN(g) RED(r) ', (answer) => {
+          if(answer === ('b')){
+            ourTB.colorScale(2,1,1);
             console.log('Blue-palette-bitmap.bmp file is generatd!!');
             CLI();
           }
-          if(answer === (1)){
-            ourTB.redGreenBleu();
+          if(answer === ('g')){
+            ourTB.colorScale(1,2,1);
             console.log('Green-palette-bitmap.bmp file is generatd!!');
             CLI();
           }
-          if(answer === (2)){
-            ourTB.redGreenBleu();
+          if(answer === ('r')){
+            ourTB.colorScale(1,1,2);
             console.log('Red-palette-bitmap.bmp file is generatd!!');
             CLI();
           }
-          if(!(answer === ( '0' ||'1' || '2' ))){
+          if(!(answer === ( 'b' ||'g' || 'r' ))){
             chooseTransform();
           }
         });

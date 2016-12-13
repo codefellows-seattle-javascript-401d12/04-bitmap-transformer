@@ -44,15 +44,6 @@ TransformableBitmap.prototype.colorScale = function(redFactor, greenFactor, blue
   return this;
 };
 
-TransformableBitmap.prototype.redGreenBleu = function(j){
-  for (var i = 0; i <= 255; i++) {
-    var color = this.bitmap[this.colorTableOffset + i * 4 + j] * 4;
-    if(color > 255) color = 255;
-    this.bitmap[this.colorTableOffset + i * 4 + j] = color;
-  }
-  this.write('../img/RGBScale-palette-bitmap.bmp');
-  return this;
-};
 
 TransformableBitmap.prototype.write = function(path) {
   fs.writeFileSync(path, this.bitmap);
