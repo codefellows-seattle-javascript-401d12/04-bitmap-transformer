@@ -14,17 +14,6 @@ exports.psychedelicTransform = function(callback) {
           psychedelicBuffer[index] = 0;
         }
       }
-
-      // forEach should work the same, but it image is presumably created unaltered before loop runs
-
-      // data.colorTable.forEach(function(color, index) {
-      //   if (index < 127) {
-      //     if (color > 200) {
-      //       color = 0;
-      //     }
-      //   }
-      // });
-
       callback(null, psychedelicBuffer);
     });
   });
