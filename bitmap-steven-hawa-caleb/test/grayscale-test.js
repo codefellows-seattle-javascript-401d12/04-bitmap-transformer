@@ -22,7 +22,7 @@ describe('Grayscale Manipulation', function() {
         var checkData = true;
         for (var i = 54; i < 1078; i+=4){
           var grayValue = (TransformBuffer.readUInt8(i) + TransformBuffer.readUInt8(i+1) + TransformBuffer.readUInt8(i+2))/3;
-          if (TransformBuffer[i] != grayValue || TransformBuffer[i+1] != grayValue || TransformBuffer[i+2] !== grayValue) checkData = false;
+          if (TransformBuffer[i] !== grayValue || TransformBuffer[i+1] !== grayValue || TransformBuffer[i+2] !== grayValue) checkData = false;
         }
         expect(checkData).to.equal(true);
         done();
