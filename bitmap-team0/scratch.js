@@ -26,9 +26,9 @@ bmp.important_colors = bitmap.readUInt32LE(50);//256
 bmp.dec_data = [];
 bmp.image_data = bitmap.toString('hex', 1078,1100).match(/.{1,6}/g);
 for (var i in bmp.image_data) {
-	bmp.dec_data[i] = [];
-	bmp.dec_data[i][0] = parseInt(bmp.image_data[i].substring(0,2),16);
-	bmp.dec_data[i][1] = parseInt(bmp.image_data[i].substring(2,4),16);
-	bmp.dec_data[i][2] = parseInt(bmp.image_data[i].substring(4,6),16);
+  bmp.dec_data[i] = [];
+  bmp.dec_data[i][0] = parseInt(bmp.image_data[i].substring(0,2),16);
+  bmp.dec_data[i][1] = parseInt(bmp.image_data[i].substring(2,4),16);
+  bmp.dec_data[i][2] = parseInt(bmp.image_data[i].substring(4,6),16);
 }
 console.dir(bmp);
